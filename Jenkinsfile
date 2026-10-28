@@ -2,8 +2,9 @@
 pipeline {
     agent any
 
-     environment {
-        PATH+DOCKER = 'C:\\Users\\deepg\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin'
+    environment {
+    DOCKER_HOME = 'C:\\Users\\deepg\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin'
+    PATH = "${env.PATH};${DOCKER_HOME}"
     }
 
     stages {
@@ -27,7 +28,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                bat 'docker build -t student-flask-app .'
+              bat '"C:\\Users\\deepg\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" build -t student-flask-app .'
             }
         }
 
