@@ -2,6 +2,10 @@
 pipeline {
     agent any
 
+     environment {
+        PATH+DOCKER = 'C:\\Users\\deepg\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin'
+    }
+
     stages {
         stage('Checkout Code') {
             steps {
